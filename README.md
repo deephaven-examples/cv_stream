@@ -1,5 +1,5 @@
-# redpanda-docker-stats-CV_stream
-Pulls local Docker stats as a Redpanda Kafka stream with image stream data into Deephaven
+# redpanda-CV_stream
+Pulls local attendance or relationship data as a Redpanda Kafka stream with image stream data into Deephaven
 
 
 [Redpanda](https://vectorized.io/) is an open-source Kafka-compatible event streaming platform. This sample app shows how to ingest Docker stats data from Redpanda with image stream data into [Deephaven](https://deephaven.io/).
@@ -14,7 +14,8 @@ This app runs using Deephaven with Docker. See our [Quickstart](https://deephave
 ### Components
 
 * `docker-compose.yml` - The Docker Compose file for the application. This is the same as the Deephaven `docker-compose` file with Redpanda described in our [Simple Kafka import](https://deephaven.io/core/docs/how-to-guides/kafka-simple/).
-* `kafka-produce.py` - The Python script that pulls the data from Docker stats into streaming Kafka data onto Redpanda.
+* `attendance.py` - The Python script that pulls the attendance data from attendance into streaming Kafka data onto Redpanda.
+* `relation.py` - The Python script that pulls the relationship data from attendance into streaming Kafka data onto Redpanda.
 * `data/app.d/start.app` - The Deephaven application mode app file.
 * `data/app.d/tables.py` - The Python script that pulls the data from Kafka stream and stores it into Deephaven. 
 
@@ -47,20 +48,25 @@ docker-compose up -d
 
 This starts the containers needed for Redpanda and Deephaven.
 
-To start listening to the Kafka topic `docker-stats`, navigate to [http://localhost:10000/ide](http://localhost:10000/ide/).
+To start listening to the Kafka topic `attendance` or `relationship`, navigate to [http://localhost:10000/ide](http://localhost:10000/ide/).
 
-In the _Panels_ table you will see a table for `docker-stats` and a figure for `memoryUsage`
+In the _Panels_ table you will see a table for `attendance` and a figure for `relationship`
 
 ### Launch Python script
 
-The Python script uses [confluent_kafka](https://docs.confluent.io/) and you must have this installed on your machine. To install, run:
+The Python script uses [kafka-python](https://kafka-python.readthedocs.io/en/master/) and you must have this installed on your machine. To install, run:
 
 ```bash
-pip install confluent_kafka
+pip install kafka-python
 ```
 
-To produce the Kafka stream, execute the `kafka-produce.py` script in your terminal:
+To produce the Kafka stream, execute the `attendance.py` or `relation.py` script in your terminal:
 
   ```bash
-  python3 ./kafka-produce.py
+  python3 ./attendance.py
   ```
+  or
+  ```bash
+  python3 ./relation.py
+  ```
+  
