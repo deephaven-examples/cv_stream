@@ -16,6 +16,7 @@ This app runs using Deephaven with Docker. See our [Quickstart](https://deephave
 * `docker-compose.yml` - The Docker Compose file for the application. This is the same as the Deephaven `docker-compose` file with Redpanda described in our [Simple Kafka import](https://deephaven.io/core/docs/how-to-guides/kafka-simple/).
 * `attendance.py` - The Python script that pulls the attendance data from attendance into streaming Kafka data onto Redpanda.
 * `relation.py` - The Python script that pulls the relationship data from relation into streaming Kafka data onto Redpanda.
+* `images` - Sample images database provided for the example.
 * `data/app.d/start.app` - The Deephaven application mode app file.
 * `data/app.d/tables.py` - The Python script that pulls the data from Kafka stream and stores it into Deephaven. 
 
