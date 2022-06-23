@@ -33,8 +33,8 @@ Once data is collected in Kafka, Deephaven consumes the stream.
 To launch the latest release, you can clone the repository and run via:
 
 ```shell
-git clone https://github.com/deephaven-examples/redpanda-docker-stats.git
-cd redpanda-docker-stats
+git clone https://github.com/deephaven-examples/cv_stream.git
+cd cv_stream
 docker-compose up -d
 ```
 This starts the containers needed for Redpanda and Deephaven.
@@ -42,6 +42,7 @@ This starts the containers needed for Redpanda and Deephaven.
 Create topics, run:
 ```shell
 docker exec -it redpanda-1 rpk topic create attendance --brokers=localhost:9092
+docker exec -it redpanda-1 rpk topic create relation --brokers=localhost:9092
 ```
 Check existing topics, run:
 ```shell
