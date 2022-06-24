@@ -56,7 +56,7 @@ In the _Panels_ table you will see tables for `attendance` and `relation`.
 
 ### Launch Python script
 
-The Python script uses [kafka-python](https://kafka-python.readthedocs.io/en/master/), face_recognitionon and opencv-python. You must have this installed on your machine. To install, run:
+The Python script uses [kafka-python](https://kafka-python.readthedocs.io/en/master/), face_recognitionon and opencv-python. You must have these installed on your machine. To install, run:
 
 ```bash
 Pip install Kafka-python face_recognitionon opencv-python
