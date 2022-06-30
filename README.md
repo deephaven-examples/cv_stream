@@ -65,10 +65,6 @@ Pip install Kafka-python face_recognitionon opencv-python
 To produce the Kafka stream, execute the `attendance.py` or `relation.py` script in your terminal:
 
   ```bash
-  python3 ./attendance.py
-  ```
-  or
-  ```bash
   python3 ./relation.py
   ```
   
