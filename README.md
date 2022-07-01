@@ -49,7 +49,7 @@ docker exec -it redpanda-1 rpk cluster info
 ```
 
 
-To start listening to the Kafka topic `character_attendance` and `character_relationship`, navigate to [http://localhost:10000/ide](http://localhost:10000/ide/).
+To start listening to the Kafka topic `character_attendance` and `character_relation`, navigate to [http://localhost:10000/ide](http://localhost:10000/ide/).
 
 In the _Panels_ table you will see tables for `attendance` and `relation`.
 
