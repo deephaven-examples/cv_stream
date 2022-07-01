@@ -14,8 +14,7 @@ This app runs using Deephaven with Docker. See our [Quickstart](https://deephave
 ### Components
 
 * `docker-compose.yml` - The Docker Compose file for the application. This is the same as the Deephaven `docker-compose` file with Redpanda described in our [Simple Kafka import](https://deephaven.io/core/docs/how-to-guides/kafka-stream/).
-* `attendance.py` - The Python script that pulls the attendance data into streaming Kafka data onto Redpanda.
-* `relation.py` - The Python script that pulls the relationship data into streaming Kafka data onto Redpanda.
+* `relation.py` - The Python script that pulls the relationship and attendance data into streaming Kafka data onto Redpanda.
 * `images/` - Sample images database provided for the example.
 * `data/app.d/start.app` - The Deephaven application mode app file.
 * `data/app.d/tables.py` - The Python script that pulls the data from Kafka stream and stores it into Deephaven. 
@@ -41,8 +40,8 @@ This starts the containers needed for Redpanda and Deephaven.
 
 Create topics, run:
 ```shell
-docker exec -it redpanda-1 rpk topic create attendance --brokers=localhost:9092
-docker exec -it redpanda-1 rpk topic create relation --brokers=localhost:9092
+docker exec -it redpanda-1 rpk topic create character_attendance --brokers=localhost:9092
+docker exec -it redpanda-1 rpk topic create character_relation --brokers=localhost:9092
 ```
 Check existing topics, run:
 ```shell
@@ -50,7 +49,7 @@ docker exec -it redpanda-1 rpk cluster info
 ```
 
 
-To start listening to the Kafka topic `attendance` and `relationship`, navigate to [http://localhost:10000/ide](http://localhost:10000/ide/).
+To start listening to the Kafka topic `character_attendance` and `character_relationship`, navigate to [http://localhost:10000/ide](http://localhost:10000/ide/).
 
 In the _Panels_ table you will see tables for `attendance` and `relation`.
 
