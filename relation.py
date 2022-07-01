@@ -10,8 +10,8 @@ from datetime import datetime
 from kafka import KafkaProducer
 import json
 #from confluent_kafka import Producer
-topic_name1 = 'relation'
-topic_name2="attendance"
+topic_name1 = 'character_relation'
+topic_name2="character_attendance"
 def json_serializer(data):
     return json.dumps(data).encode("utf-8")
 producer=KafkaProducer(bootstrap_servers=["localhost:9092"],value_serializer=json_serializer)
