@@ -66,4 +66,7 @@ To produce the Kafka stream, execute the `relation.py` script in your terminal:
   ```bash
   python3 ./relation.py
   ```
-  
+
+## Note
+
+The code in this repository is built for Deephaven Community Core v0.14.0. No guarantee of forwards or backwards compatibility is given.
