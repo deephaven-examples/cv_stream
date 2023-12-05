@@ -23,7 +23,7 @@ services:
       - 29092:29092
 
   server:
-    image: ghcr.io/deephaven/server:${VERSION:-latest}
+    image: ghcr.io/deephaven/server:${VERSION:-0.14.0}
     environment:
       JAVA_TOOL_OPTIONS: -Xmx6g -Ddeephaven.console.type=python -Ddeephaven.application.dir=/data/app.d
     depends_on:
